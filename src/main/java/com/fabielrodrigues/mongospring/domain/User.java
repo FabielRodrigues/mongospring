@@ -2,54 +2,60 @@ package com.fabielrodrigues.mongospring.domain;
 
 import java.io.Serializable;
 
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
+
+@Document(collection="user")
 public class User implements Serializable {
 
 	private static final long serialVersionUID = 1L;
-	private Integer Id;
-	private String Name;
-	private String Email;
+	
+	@Id
+	private String id;
+	private String name;
+	private String email;
 	
 	public User()
 	{
 		
 	}
 
-	public User(Integer id, String name, String email) {
+	public User(String id, String name, String email) {
 		super();
-		Id = id;
-		Name = name;
-		Email = email;
+		id = id;
+		name = name;
+		email = email;
 	}
 
-	public Integer getId() {
-		return Id;
+	public String getId() {
+		return id;
 	}
 
 	public void setId(Integer id) {
-		Id = id;
+		id = id;
 	}
 
 	public String getName() {
-		return Name;
+		return name;
 	}
 
 	public void setName(String name) {
-		Name = name;
+		name = name;
 	}
 
 	public String getEmail() {
-		return Email;
+		return email;
 	}
 
 	public void setEmail(String email) {
-		Email = email;
+		email = email;
 	}
 
 	@Override
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
-		result = prime * result + ((Id == null) ? 0 : Id.hashCode());
+		result = prime * result + ((id == null) ? 0 : id.hashCode());
 		return result;
 	}
 
@@ -62,10 +68,10 @@ public class User implements Serializable {
 		if (getClass() != obj.getClass())
 			return false;
 		User other = (User) obj;
-		if (Id == null) {
-			if (other.Id != null)
+		if (id == null) {
+			if (other.id != null)
 				return false;
-		} else if (!Id.equals(other.Id))
+		} else if (!id.equals(other.id))
 			return false;
 		return true;
 	}	
