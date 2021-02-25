@@ -22,17 +22,17 @@ public class User implements Serializable {
 
 	public User(String id, String name, String email) {
 		super();
-		id = id;
-		name = name;
-		email = email;
+		this.id = id;
+		this.name = name;
+		this.email = email;
 	}
 
 	public String getId() {
 		return id;
 	}
 
-	public void setId(Integer id) {
-		id = id;
+	public void setId(String id) {
+		this.id = id;
 	}
 
 	public String getName() {
@@ -40,7 +40,7 @@ public class User implements Serializable {
 	}
 
 	public void setName(String name) {
-		name = name;
+		this.name = name;
 	}
 
 	public String getEmail() {
@@ -48,7 +48,7 @@ public class User implements Serializable {
 	}
 
 	public void setEmail(String email) {
-		email = email;
+		this.email = email;
 	}
 
 	@Override
